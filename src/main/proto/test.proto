@@ -1,0 +1,25 @@
+syntax="proto3";
+
+
+option java_multiple_files=false;
+option java_package="test";
+option java_outer_classname="testProto";
+option objc_class_prefix="TS";
+
+package test;
+
+service TestService{
+
+    rpc testFunction(TestInput) returns(TestOutPut){}
+
+}
+
+message TestInput{
+    string  Key =1;
+}
+
+message TestOutPut{
+
+    string Key = 1;
+
+}
