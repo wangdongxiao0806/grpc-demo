@@ -10,6 +10,9 @@ public class TestService extends TestServiceGrpc.TestServiceImplBase{
 
     public void sayHello(TestInput request,
                          io.grpc.stub.StreamObserver<TestOutPut> responseObserver) {
-        System.out.println("TestService ........");
+        System.out.println("TestService ........param:"+request.getKey());
+        TestOutPut testOutPut = TestOutPut.newBuilder().setKey("hello "+request.getKey()).build();
+        responseObserver.onNext(testOutPut);
+        responseObserver.onCompleted();
     }
 }

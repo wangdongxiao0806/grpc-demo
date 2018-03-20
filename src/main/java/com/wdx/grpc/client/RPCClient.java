@@ -27,7 +27,7 @@ public class RPCClient {
     }
 
     public  void greet(String name){
-        TestInput request = TestInput.newBuilder().setKey("aaa").build();
+        TestInput request = TestInput.newBuilder().setKey(name).build();
         TestOutPut response = blockingStub.sayHello(request);
         System.out.println(response.getKey());
 
