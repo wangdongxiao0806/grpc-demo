@@ -1,16 +1,16 @@
 syntax="proto3";
 
 
-option java_multiple_files=false;
-option java_package="test";
-option java_outer_classname="testProto";
+option java_multiple_files=true;
+option java_package="com.wdx.grpc";
+option java_outer_classname="ServicesProto";
 option objc_class_prefix="TS";
 
-package test;
+package com.wdx.grpc;
 
 service TestService{
 
-    rpc testFunction(TestInput) returns(TestOutPut){}
+    rpc sayHello(TestInput) returns(TestOutPut){}
 
 }
 
